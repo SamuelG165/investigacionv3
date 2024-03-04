@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Departamento de Investigación y Desarrollo Tecnológico - CECyT No. 3</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="Templates.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header, footer {
+            background-color: #099add;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        .banner-deslizable {
+            display: flex;
+            overflow-x: auto;
+        }
+
+        .evento {
+            margin-right: 20px;
+            width: 300px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .evento img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .descripcion-evento {
+            background-color: #f2f2f2;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .recuadro-informacion, .recuadro-contacto {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .banner-deslizable {
+                flex-direction: column;
+            }
+
+            .evento {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+
+        header img.logo {
+            position: absolute;
+            top: 0;
+            left: 90%;
+            max-width: 115px;
+            height: auto;
+            transform: translateX(-50%);
+        }
+
+        header img.image-corner {
+            position: absolute;
+            top: 0;
+            left: 5%; /* Change this value to 5% */
+            max-width: 85px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <a href="https://www.cecyt3.ipn.mx/" target="_blank">
+        <img src="./descarga-removebg-preview.png" alt="Logo CECyT 3" class="logo">
+    </a>
+    <a href="https://www.ipn.mx/" target="_blank">
+        <img src="./logoipn-removebg-preview.png" alt="Logo IPN" class="image-corner">
+    </a>
+    <h1>Departamento de Investigación y Desarrollo Tecnológico</h1>
+
+    <nav>
+        <style>
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 10px; /* Espacio superior */
+}
+
+nav ul li {
+    display: inline-block; /* Para que los elementos de la lista estén en línea */
+}
+
+nav ul li a {
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #099add; /* Color de fondo */
+    color: #fff; /* Color de texto */
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: background-color 0.3s, transform 0.2s; /* Transiciones suaves */
+}
+
+nav ul li a:hover {
+    background-color: #0c7dbd; /* Cambio de color al pasar el ratón */
+    transform: translateY(-2px); /* Efecto de elevación */
+}
+nav ul li a:hover {
+    background-color: #0c7dbd; /* Cambio de color al pasar el ratón */
+    transform: translateY(-2px); /* Efecto de elevación */
+    animation: glitch 0.5s infinite linear alternate; /* Animación de glitch */
+}
+
+@keyframes glitch {
+    0% {
+        transform: translateX(0);
+    }
+    20% {
+        transform: translateX(-2px);
+    }
+    40% {
+        transform: translateX(2px);
+    }
+    60% {
+        transform: translateX(-2px);
+    }
+    80% {
+        transform: translateX(2px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+        </style>
+        <ul>
+            <li><a href="#eventos">Eventos</a></li>
+            <li><a href="#calendario">Calendario</a></li>
+            <li><a href="#informacion">Información del Departamento</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="#ubicacion">Ubicación</a></li>
+        </ul>
+    </nav>
+</header>
+<style>
+.evento img {
+width: 100%;
+height: auto;
+object-fit: cover; /* Agregar esta línea */
+}
+
+</style>
+<main>
+    <div class="container">
+        <section id="eventos">
+            <h2>➠ Eventos</h2>
+            <div class="banner-deslizable">
+                <div class="evento">
+                    <img src="./431227336_725772043073765_6048454508542548037_n.jpg" alt="Evento 1">
+                    <div class="descripcion-evento">
+                        <h3>Ejemplo de evento</h3>
+                        <p>32° Semana de ciencia y tecnología</p>
+                        <a href="#">Registrarse</a>
+                    </div>
+                </div>
+                <!-- Agregar más eventos similares según sea necesario -->
+                <div class="evento">
+                    <img src="imagen2.jpg" alt="Evento 2">
+                    <div class="descripcion-evento">
+                        <h3>Evento 2</h3>
+                        <p>Descripción del evento 2.</p>
+                        <a href="#">Registrarse</a>
+                    </div>
+                </div>
+                <div class="evento">
+                    <img src="imagen3.jpg" alt="Evento 3">
+                    <div class="descripcion-evento">
+                        <h3>Evento 3</h3>
+                        <p>Descripción del evento 3.</p>
+                        <a href="#">Registrarse</a>
+                    </div>
+                </div>
+                <div class="evento">
+                    <img src="imagen4.jpg" alt="Evento 4">
+                    <div class="descripcion-evento">
+                        <h3>Evento 4</h3>
+                        <p>Descripción del evento 4.</p>
+                        <a href="#">Registrarse</a>
+                    </div>
+                </div>
+                <div class="evento">
+                    <img src="imagen5.jpg" alt="Evento 5">
+                    <div class="descripcion-evento">
+                        <h3>Evento 5</h3>
+                        <p>Descripción del evento 5.</p>
+                        <a href="#">Registrarse</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="calendario">
+            <h2>➠ Calendario</h2>
+            <div class="enlace-calendario">
+                <a href="./calendario/index.html">Calendario</a>
+            </div>
+        </section>
+        
+        
+
+        <section id="informacion">
+            <h2>➠ Información del Departamento</h2>
+            <div class="recuadro-informacion">
+                <p>Aquí puedes agregar información relevante sobre el departamento.</p>
+            </div>
+        </section>
+
+        <section id="contacto">
+            <h2>➠ Contacto</h2>
+            <div class="recuadro-contacto">
+                <p>Para más información, contáctanos:</p>
+                <ul>
+                    <li>Marcar a: 55 5729 6000, 55 5729 6300, 55 5624 2000</li>
+                    <li>EXT. 74001</li>
+                    <li><a href="mailto:invydetec.cecyt3@ipn.mx" target="_blank" class="aElementTemplates">
+                       Correo electrónico: invydetec.cecyt3@ipn.mx 
+                    </a></li>
+                    <!-- Se pueden agregar más medios de contacto según sea necesario -->
+                </ul>
+            </div>
+        </section>
+        <section id="ubicacion">
+            <h2>➠ Ubicación</h2>
+            <div class="recuadro-ubicacion">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d3761.929634972961!2d-99.0192441!3d19.5707411!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x85d1f02f26af3137%3A0xe677294103786cf5!2sCECyT%203!3m2!1d19.5876438!2d-99.0475143!4m5!1s0x85d1f02f26af3137%3A0xe677294103786cf5!2sCECyT%203!3m2!1d19.5876438!2d-99.0475143!5e0!3m2!1sen!2smx!4v1646889899221!5m2!1sen!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+
+    </div>
+</main>
+
+<footer>
+    <style>
+         <style>
+      body {
+        font-family: 'Segoe Script', sans-serif;
+        background-color: #f8f8f8;
+      }
+      .frame {
+        max-width: 800px;
+        margin: 50px auto;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        background-color: #474444;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        animation: glowing 4s infinite alternate;
+      }
+      .container {
+        padding: 20px;
+        text-align: center;
+      }
+      .event-info {
+        background-color: #0f0f0f;
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 20px;
+      }
+      #addToCalendar {
+        background-color: #4CAF50;
+        color: rgb(15, 15, 15);
+        padding: 15px 30px;
+        border: none;
+        border-radius: 5px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin-top: 20px;
+      }
+  
+      @keyframes glowing {
+        0% {
+          box-shadow: 0 0 20px #f00;
+        }
+        100% {
+          box-shadow: 0 0 20px #f00, 0 0 40px #ff0000, 0 0 60px #ff0000;
+        }
+      }
+    </style>
+    </style>
+    <div class="frame">
+        <div class="container">
+          <h1>Depto. de Investigación y Desarrollo Tecnológico</h1>
+          <div class="event-info">
+            <p><strong>Días de atención:</strong> Lunes a viernes</p>
+            <br></br>
+            <p><strong>Horario:</strong> 07:00 AM - 20:00 PM</p>
+            <br></br>
+            <p><strong>Ubicación:</strong> Centro de Estudios Científicos y Tecnológicos N° 3 “Estanislao Ramírez Ruiz” IPN, Manzana 027, 55118 Ecatepec de Morelos, Méx.
+            </p>
+          </div>
+</footer>
+
+</body>
+</html>
