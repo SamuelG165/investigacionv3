@@ -9,6 +9,234 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="Templates.css">
+
+    <style>
+        /* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f8f8f8; /* Color de fondo */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Estilos para el encabezado */
+header {
+    background-color: rgba(9, 154, 221, 0.6);
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+header img.logo {
+    position: absolute;
+    top: 15%;
+    left: 92%; /* Change this value to 5% */
+    max-width: 80px;
+    height: auto;
+    transform: translateX(-50%);
+}
+
+header img.image-corner {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    max-width: 69px;
+    height: auto;
+}
+
+/* Estilos para la barra de navegación */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #099add;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+nav ul li a:hover {
+    background-color: #85c4e9;
+    transform: translateY(-2px);
+}
+
+/* Estilos para el video */
+video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+}
+
+/* Estilos para el overlay */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 0;
+}
+
+/* Estilos para el contenido principal */
+main {
+    padding: 20px;
+}
+
+/* Estilos para las secciones */
+section {
+    margin-bottom: 40px;
+}
+
+/* Estilos para los eventos */
+.evento {
+    margin-bottom: 20px;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.evento img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.descripcion-evento {
+    background-color: #f2f2f2;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Estilos para el calendario */
+#calendar {
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
+/* Estilos para la ventana modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    background-color: #a9e8f8;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    border-radius: 10px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+}
+
+/* Estilos para el botón "Ver actividades del departamento" */
+#openModalBtn {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 20px auto;
+    display: block;
+    width: 200px;
+}
+
+#openModalBtn:hover {
+    background-color: #45a049;
+}
+
+/* Estilos para la información del departamento */
+#informacion {
+    background-color: #fff;
+    padding-bottom: 20px;
+}
+
+.recuadro-informacion {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+}
+
+/* Estilos para el contacto */
+#contacto {
+    background-color: #fff;
+    padding-bottom: 20px;
+}
+
+.recuadro-contacto {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+}
+
+footer {
+    background-color: rgba(9, 154, 221, 0.6);
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+    </style>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -210,7 +438,6 @@ nav ul li a:hover {
             <li><a href="#calendario">Calendario</a></li>
             <li><a href="#informacion">Información del Departamento</a></li>
             <li><a href="#contacto">Contacto</a></li>
-            <li><a href="#ubicacion">Ubicación</a></li>
         </ul>
     </nav>
 </header>
@@ -441,7 +668,217 @@ object-fit: cover; /* Agregar esta línea */
     $('#month-year').text(month + ' ' + year);
 });
         </script>
-    </body>     
+    </body> 
+    
+    <style>
+        /* Estilos para la ventana modal */
+.modal {
+  display: none; /* Oculta la ventana modal por defecto */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.8);
+}
+
+.modal-content {
+  background-color: #a9e8f8;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+/* Estilos para el botón "Ver actividades del deprtamento" */
+        #openModalBtn {
+            background-color: #4CAF50;
+            color: rgb(255, 255, 255);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin: 20px auto;
+            display: block;
+            width: 200px;
+        }
+
+        #openModalBtn:hover {
+            background-color: #45a049;
+        }
+
+        /* Estilos para el contenido del modal */
+        .modal-content {
+            background-color: #aefafa;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Estilos para los títulos dentro del modal */
+        .modal-content h3 {
+            color: #333;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        /* Estilos para los enlaces dentro del modal */
+        .modal-content a {
+            background-color: #4CAF50;
+            color: rgb(250, 251, 252);
+            padding: 8px 16px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .modal-content a:hover {
+            background-color: #45a049;
+        }
+
+        /* Estilos para el botón de cierre del modal */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+        }
+
+        /* Estilos para las líneas divisorias */
+        .topic {
+            position: relative;
+            border-bottom: 1px solid #0e0d0d;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+
+        .topic:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+    </style>
+
+<!-- Botón para abrir la ventana modal -->
+<button id="openModalBtn">Ver Actividades del departamento</button>
+
+<!-- Estructura de la ventana modal -->
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <!-- Contenido de la ventana modal (actividades del departamento) -->
+    
+    <!-- Act. depto. -->
+    <div class="topic">
+        <h3>SIBE</h3>
+        
+        <a href="https://www.cofaa.ipn.mx/becas/beca-por-exclusividad.html" target="_blank">Ver página</a>
+    </div>
+    <div class="topic">
+        <h3>BEIFI</h3>
+       
+        <a href="https://www.ipn.mx/investigacion/estimulos/pifi/" target="_blank">Ver página</a>
+    </div>
+
+    <div class="topic">
+      <h3>DELFIN</h3>
+     
+      <a href="https://www.programadelfin.org.mx/" target="_blank">Ver página</a>
+  </div>
+
+  <div class="topic">
+    <h3>EDD</h3>
+   
+    <a href="https://www.ipn.mx/seacademica/comisionescomites/edd/" target="_blank">Ver página</a>
+</div>
+
+<div class="topic">
+    <h3>P. INVESTIGACIÓN</h3>
+   
+    <a href="https://www.ipn.mx/sip/" target="_blank">Ver página</a>
+  </div>
+
+<div class="topic">
+  <h3>EDI</h3>
+ 
+  <a href="https://www.ipn.mx/investigacion/estimulos/edi/" target="_blank">Ver página</a>
+</div>
+
+<div class="topic">
+    <h3>Año sabático</h3>
+   
+    <a href="https://www.ipn.mx/seacademica/comisionescomites/sabatico/" target="_blank">Ver página</a>
+  </div>
+
+      <!-- Contenido de los temas del curso -->
+    </div>
+  </div>
+</div>
+<script>
+    
+    
+// Obtiene el botón para abrir la ventana modal
+var openModalBtn = document.getElementById("openModalBtn");
+
+// Obtiene la ventana modal
+var modal = document.getElementById("myModal");
+
+// Obtiene el elemento de cierre de la ventana modal
+var closeBtn = document.getElementsByClassName("close")[0];
+
+// Cuando el usuario haga clic en el botón, muestra la ventana modal
+openModalBtn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// Cuando el usuario haga clic en el botón de cierre, oculta la ventana modal
+closeBtn.onclick = function() {
+  modal.style.display = "none";
+}
+
+// Cuando el usuario haga clic fuera de la ventana modal, también la oculta
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+</script>
+<!-- Después del div con class="course-link" -->
+
+    <!-- Puedes agregar más temas según sea necesario -->
+</div>
+
+
+
     <style>
         #informacion {
             background-color: white;
@@ -458,6 +895,24 @@ object-fit: cover; /* Agregar esta línea */
             /* Estilos adicionales para el contenido si es necesario */
         
         }
+
+        .recuadro-informacion,
+.recuadro-contacto {
+    margin: 0 auto; /* Centra horizontalmente */
+    max-width: 600px; /* Ancho máximo del recuadro */
+    padding: 20px; /* Espacio interno */
+    text-align: center; /* Centra el contenido */
+    border-radius: 10px; /* Redondea las esquinas */
+    background-color: #f9f9f9; /* Color de fondo */
+    border: 1px solid #ddd; /* Borde */
+}
+
+.recuadro-informacion h2,
+.recuadro-contacto h2 {
+    margin-top: 0; /* Elimina el margen superior predeterminado */
+    text-align: center; /* Centra el texto */
+}
+
     </style>
 
         <section id="informacion">
@@ -494,7 +949,7 @@ object-fit: cover; /* Agregar esta línea */
                 <p>Para más información, contáctanos:</p>
                 <ul>
                     <li>Marcar a: 55 5729 6000, 55 5729 6300, 55 5624 2000</li>
-                    <li>EXT. 74001</li>
+                    EXT. 74001
                     <li><a href="mailto:invydetec.cecyt3@ipn.mx" target="_blank" class="aElementTemplates">
                        Correo electrónico: invydetec.cecyt3@ipn.mx 
                     </a></li>
@@ -502,11 +957,6 @@ object-fit: cover; /* Agregar esta línea */
                 </ul>
             </div>
         </section>
-        <section id="ubicacion">
-            <h2>➠ Ubicación</h2>
-            <div class="recuadro-ubicacion">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d3761.929634972961!2d-99.0192441!3d19.5707411!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x85d1f02f26af3137%3A0xe677294103786cf5!2sCECyT%203!3m2!1d19.5876438!2d-99.0475143!4m5!1s0x85d1f02f26af3137%3A0xe677294103786cf5!2sCECyT%203!3m2!1d19.5876438!2d-99.0475143!5e0!3m2!1sen!2smx!4v1646889899221!5m2!1sen!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-    </div>
 </main>
 
 <footer>
